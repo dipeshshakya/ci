@@ -1,4 +1,4 @@
- <?php echo form_open('Login_controller/login'); ?>
+ <?php echo form_open('User_controller/login'); ?>
   <?php echo validation_errors(); ?>  
 
 <form class="form-horizontal">

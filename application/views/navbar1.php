@@ -2,7 +2,7 @@
 
 
 
-<nav class="navbar navbar-custom  navbar-static-top " role="banner"style="height:60px;border-bottom-color:grey;">
+<nav class="navbar navbar-custom  navbar-static-top nav navbar-inverse" role="banner"style="height:60px;border-bottom-color:grey;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">

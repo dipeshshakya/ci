@@ -27,7 +27,7 @@
           
 	  
     </style>
-    <div class="well well-sm">
+    
 
 <div class="container-fluid">
 
@@ -35,57 +35,58 @@
 			<?php include ("search.php");?>
 				
                         </div><!---search-->
-
-			
-
+        <div class="row">
+             <div  class="col-md-3"> 
+                 <div class="well-sm container">
+                 
+                 
+                 
+                 
+                 
+                 </div>
+              </div><!---col-md-3 well-lg----->
+            <div class="col-md-9 ">
+                <div class="well-lg container">
+                
    <!-- tabs right -->
      
         <ul class="nav nav-pills">
-    <li class="active"><a href="#Profile"  data-toggle="tab">Profile</a></li>
-    <li><a href="#AddList" data-toggle="tab">AddList</a></li>
-     <li><a href="#Mysave" data-toggle="tab">Mysave</a></li>
-     <li><a href="#Myfavourite" data-toggle="tab">Myfavourite</a></li>
-   </ul>
+             <li class="active"><a href="#Add Listing"  data-toggle="tab">Add Listing</a></li>
+            <li><a href="#My Favourite" data-toggle="tab">My Favourite</a></li>
+         </ul>
    
 
    
    
    
    
-  <!-- Tab panes -->
-  <div class="tab-content">
-		<div role="tabpanel" class="tab-pane active" id="">
-			<div id ="body-map" style="height:480px;">
-	
-				
-		
-	
-			</div><!--body-map-->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                                      <div role="tabpanel" class="tab-pane active" id="Add Listing">
+                                              <div id ="body-map" style="height:480px;">
 
+
+
+
+                                              </div><!--body-map-->
+
+
+
+                                      </div><!---tab-map-->
+                                      <div role="tabpanel" class="tab-pane" id="My Favourite">
+                                                      <div id ="body-map" style="height:480px;">
+                                                      </div>
+
+                                      </div><!--tab-list-->
+
+
+                                  </div><!--tab-content-->
+
+
+                </div>
+             </div><!---col-md-9 well-lg----->
+                        
+	</div><!---row--->	
 	
-	
-		</div><!---tab-map-->
-		<div role="tabpanel" class="tab-pane" id="AddList">
-				<div id ="body-map" style="height:480px;">
-				</div>
-	
-		</div><!--tab-list-->
-   <div role="tabpanel" class="tab-pane" id="MySave">
-				<div id ="body-map" style="height:480px;">
-				</div>
-	
-		</div><!--tab-list-->
-                <div role="tabpanel" class="tab-pane" id="Myfavourite">
-				<div id ="body-map" style="height:480px;">
-				</div>
-	
-		</div><!--tab-list-->
-    
-            </div><!--tab-content-->
-	</div>
-	<!--innercontainer-fluid-->
-	
-	
-	</div><!--well-->
 
 

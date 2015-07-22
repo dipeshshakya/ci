@@ -1,5 +1,5 @@
 
-<?php echo form_open('Signup_controller/signup'); ?>
+<?php echo form_open('User_controller/signup'); ?>
 <?php echo validation_errors(); ?>
 
 <form class="form-horizontal">
@@ -40,7 +40,7 @@
             <div class="control-group">
               <label class="control-label" for="phone">Phone:</label>
               <div class="controls">
-                <input id="phone" class="form-control" name="Phone" type="Text" placeholder="" class="input-large" required="">
+                <input id="Phone" class="form-control" name="Phone" type="Text" placeholder="" class="input-large" required="">
               </div>
             </div>
 			 <!-- Password input-->
