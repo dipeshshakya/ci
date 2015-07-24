@@ -30,8 +30,8 @@
       <ul class="nav navbar-nav navbar-right">
 	  
         
-    
-		<li><a href="#">logout</a></li>
+               
+		<li><?php echo anchor('User_controller/logout', 'Logout'); ?></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

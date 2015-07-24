@@ -36,8 +36,9 @@
 				
                         </div><!---search-->
         <div class="row">
-             <div  class="col-md-3"> 
+        <div  class="col-md-3"> 
                  <div class="well-sm container">
+                     
                  
                  
                  
@@ -48,13 +49,13 @@
             <div class="col-md-9 ">
                 <div class="well-lg container">
                 
-   <!-- tabs right -->
-     
-        <ul class="nav nav-pills">
-             <li class="active"><a href="#Add Listing"  data-toggle="tab">Add Listing</a></li>
-            <li><a href="#My Favourite" data-toggle="tab">My Favourite</a></li>
-         </ul>
-   
+                    <!-- tabs right -->
+
+                         <ul class="nav nav-tabs">
+                              <li class="active"><a href="#AddListing"  data-toggle="tab">Add Listing</a></li>
+                             <li><a href="#MyFavourite" data-toggle="tab">My Favourite</a></li>
+                          </ul>
+
 
    
    
@@ -62,19 +63,20 @@
    
                         <!-- Tab panes -->
                         <div class="tab-content">
-                                      <div role="tabpanel" class="tab-pane active" id="Add Listing">
-                                              <div id ="body-map" style="height:480px;">
+                                      <div role="tabpanel" class="tab-pane active" id="AddListing">
+                                              
+
+                                                    <?php include('addlisting.php');?>
 
 
-
-
-                                              </div><!--body-map-->
+                                            
 
 
 
                                       </div><!---tab-map-->
-                                      <div role="tabpanel" class="tab-pane" id="My Favourite">
+                                      <div role="tabpanel" class="tab-pane" id="MyFavourite">
                                                       <div id ="body-map" style="height:480px;">
+                                                          
                                                       </div>
 
                                       </div><!--tab-list-->

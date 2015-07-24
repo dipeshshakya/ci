@@ -84,7 +84,8 @@ a.socialIcon:hover, .socialHoverClass {
 
 </style>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="assets/css/tabs2.css" rel="stylesheet">
+<!--<link type="text/css" href="assets/css/tabs2.css" rel="stylesheet">-->
+
 <footer style="background-color:#D3E2FF;">
 <div class="container-fluid" >
 <div class="row">
@@ -137,7 +138,7 @@ a.socialIcon:hover, .socialHoverClass {
 		
                 <script type="text/javascript" src="assets/js/map.js"></script>
                 <script type="text/javascript" src="assets/js/search.js"></script>
-                
+             
     
 </body>
 </html>

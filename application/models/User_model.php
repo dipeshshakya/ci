@@ -20,31 +20,51 @@ class User_model extends CI_model{
 	
 		}//end add_user
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////                
-                //user login
-                function login($email,$password)
-                    {
-                     $this->db->where("email",$email);
-                     $this->db->where("password",$password);
+             
 
-                     $query=$this->db->get("register_user");
-                     if($query->num_rows()>0)
-                     {
-                      foreach($query->result() as $rows)
-                      {
-                       //add all data to session
-                       $newdata = array(
-                         'user_id'  => $rows->id,
-                         'firstname'  => $rows->firstname,
-                         'email'    => $rows->email,
-                         'logged_in'  => TRUE,
-                       );
-                      }//for loop
-                      $this->session->set_userdata($newdata);
-                      return true;
-                     }
-                     return false;
-                    }//end user login
+                  public function validate($email,$password)
+                    {
+                   
+                    // Prep the query
+                      
+                     $this->db->select('*'); 
+                    $this->db->where('email', $email);
+                    $this->db->where('password', $password);
+
+                    // Run the query
+                    $query = $this->db->get('register_user');
+                    // Let's check if there are any results
+                           if($query->num_rows()>0)
+                            {
+				
+				foreach($query->result() as $rows)
+                                        {
+					$newdata=array('id'=>$rows->user_id,
+									'firstname'=>$rows->firstname,
+									'lastname'=>$rows->lastname,
+									'address'=>$rows->address,
+									
+									'email'=>$rows->email,
+				
+                                                                        'logged_in'=>TRUE,
+									);
+					
+					}
+					$this->session->set_userdata($newdata);
+					return TRUE;
+                            }
+					
+					return FALSE;
+			
+			
+            
+                    }//validate
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+     }//user_model
 
                 
-}               
+             
                 
