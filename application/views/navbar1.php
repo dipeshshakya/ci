@@ -48,7 +48,7 @@
             <ul id="myTab" class="nav nav-tabs">
               <li class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
               <li class=""><a href="#signup" data-toggle="tab">Register</a></li>
-              
+             
             </ul>
         </div>
      <div class="modal-body">
@@ -65,7 +65,7 @@
            
         </div><!--mytabcontent--->
     </div><!---model-body--->
-      <div class="modal-footer">
+     <!-- <div class="modal-footer">
       <center>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </center>

@@ -35,17 +35,16 @@
 			<?php include ("search.php");?>
 				
                         </div><!---search-->
-        <div class="row">
+   <div class="row">
         <div  class="col-md-3"> 
-                 <div class="well-sm container">
-                     
+                
+                   <?php include('Userprofile_view.php');?>
                  
                  
                  
-                 
-                 
-                 </div>
-              </div><!---col-md-3 well-lg----->
+               
+              </div><!---col-md-3 well-lg-----><!---profile sidebar----->
+              
             <div class="col-md-9 ">
                 <div class="well-lg container">
                 
@@ -73,7 +72,7 @@
 
 
 
-                                      </div><!---tab-map-->
+                                      </div><!---tab-addlisting-->
                                       <div role="tabpanel" class="tab-pane" id="MyFavourite">
                                                       <div id ="body-map" style="height:480px;">
                                                           
@@ -89,6 +88,7 @@
              </div><!---col-md-9 well-lg----->
                         
 	</div><!---row--->	
+</div><!---container--->       
 	
 
 
