@@ -4,24 +4,26 @@ class Addlisting_controller extends CI_Controller{
     
     public function addlisting() {
         parent::__construct();
-        $this->load->model('Addlisting_model');
+       // $this->load->model('Addlisting_model');
+          $this->load->database();
        
         
     }
      
     public function uploadpost()
-    {
+            {
+        $this->load->model('Addlisting_model','Addlisting_model');
         //fetch data from  and parking tables
         $data['property_type'] = $this->Addlisting_model->get_property_type();
         $data['room'] = $this->Addlisting_model->get_room();
         $data['parking'] = $this->Addlisting_model->get_parking();
         //set validation rules
-        $this->form_validation->set_rules('address', '', 'trim|required|xss_clean|callback_alpha_only_space');
+        $this->form_validation->set_rules('address', 'Location', 'trim|required|xss_clean|callback_alpha_only_space');
         $this->form_validation->set_rules('price', 'Price', 'trim|required|numeric');
         $this->form_validation->set_rules('property_type', 'property Type', 'callback_combo_check');
         $this->form_validation->set_rules('room', 'Room', 'callback_combo_check');
          $this->form_validation->set_rules('parking', 'Parking', 'callback_combo_check');
-        $this->form_validation->set_rules('description', '', 'trim|required|xss_clean|callback_alpha_only_space');
+        $this->form_validation->set_rules('description', 'Description', 'trim|required|xss_clean|callback_alpha_only_space');
        
 
         if ($this->form_validation->run() == FALSE)
@@ -30,26 +32,8 @@ class Addlisting_controller extends CI_Controller{
             $this->load->view('profile', $data);
         }
         else
-        {    
-            //pass validation
-            $data = array(
-                'address' => $this->input->post('address'),
-                'price' => $this->input->post('price'),
-                'property_type_id' => $this->input->post('property_type'),
-                'parking_id' => $this->input->post('parking'),
-                 'room_id' => $this->input->post('room'),
-                //'upload_date' => @date('Y-m-d', @strtotime($this->input->post('uploaddate'))),
-                'description' => $this->input->post('discription'),
-            );
-
-            //insert the form data into database
-            $this->db->insert('upload', $data);
-
-            //display success message
-            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center"> details added to Database!!!</div>');
-            redirect('Addlisting_controller/Add_post');
-        }
-
+        { $this->User_model->add_post();
+                    $this ->load->view('profile');}
     }
     
     
