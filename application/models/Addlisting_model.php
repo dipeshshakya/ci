@@ -71,7 +71,7 @@ class Addlisting_model extends CI_Model
         }
         return $parking_result = array_combine($parking_id, $parking_name);
     }
-    function add_post() {
+     public function add_post() {
 
 
           
@@ -79,19 +79,19 @@ class Addlisting_model extends CI_Model
             $data = array(
                 'address' => $this->input->post('address'),
                 'price' => $this->input->post('price'),
-                'property_type_id' => $this->input->post('property_type'),
+               'property_type_id' => $this->input->post('property_type'),
                 'parking_id' => $this->input->post('parking'),
-                 'room_id' => $this->input->post('room'),
+                'room_id' => $this->input->post('room'),
                 //'upload_date' => @date('Y-m-d', @strtotime($this->input->post('uploaddate'))),
-                'description' => $this->input->post('discription'),
+                'description' => $this->input->post('description'),
             );
-
+                
             //insert the form data into database
             $this->db->insert('upload', $data);
 
             //display success message
             $this->session->set_flashdata('msg', '<div class="alert alert-success text-center"> details added to Database!!!</div>');
-            redirect('Addlisting_controller/Add_post');
+            redirect('Addlisting_controller/ uploadpost');
         }
 
 }

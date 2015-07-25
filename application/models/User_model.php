@@ -9,13 +9,13 @@ class User_model extends CI_model{
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////               
                 function add_user(){
 		$data=array('firstname'=>$this->input->post('firstname'),
-					'lastname'=>$this->input->post('lastname'),
-					'address'=>$this->input->post('address'),
-					'email'=>$this->input->post('email'),
-					'password'=>$this->input->post('password'),
-					'Phone'=>$this->input->post('Phone'),
-					
-					);
+                            'lastname'=>$this->input->post('lastname'),
+                            'address'=>$this->input->post('address'),
+                            'email'=>$this->input->post('email'),
+                            'password'=>$this->input->post('password'),
+                            'Phone'=>$this->input->post('Phone'),
+
+                            );
                 $this->db->insert('register_user',$data);
 	
 		}//end add_user
