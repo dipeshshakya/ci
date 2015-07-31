@@ -1,8 +1,5 @@
 
-<?php include_once ('header.php'); ?>
-
-<?php include_once ('navbar2.php'); ?>
-
-<?php include_once ('tabs2.php'); ?>
-
-<?php include_once ('footer.php'); ?>
+<?php $this->load->view('header');?>
+<?php $this->load->view('navbar2');?>
+<?php $this->load->view('tabs2');?>
+<?php $this->load->view('footer');?>

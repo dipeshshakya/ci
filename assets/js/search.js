@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $("#search").click(function(){
-        $("#mysearch").load("search.php");
-		$('#mysearch').toggle();
+        $("#mysearch").hide();
+		$('#mysearch').show();
 	
     });
     

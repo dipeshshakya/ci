@@ -71,12 +71,15 @@ class Addlisting_model extends CI_Model
         }
         return $parking_result = array_combine($parking_id, $parking_name);
     }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      public function add_post() {
 
 
           
             //pass validation
             $data = array(
+             
+            
                 'address' => $this->input->post('address'),
                 'price' => $this->input->post('price'),
                'property_type_id' => $this->input->post('property_type'),
@@ -90,9 +93,16 @@ class Addlisting_model extends CI_Model
             $this->db->insert('upload', $data);
 
             //display success message
-            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center"> details added to Database!!!</div>');
-            redirect('Addlisting_controller/ uploadpost');
+           // $this->session->set_flashdata('msg', '<div class="alert alert-success text-center"> details added to Database!!!</div>');
+            //redirect('addlisting_controller/ uploadpost');
         }
 
+//        public function img_upload($data){
+//             //insert the form data into database
+//            $this->db->insert('upload_img', $data);
+//        } 
+//}
+//
+     
 }
 ?>

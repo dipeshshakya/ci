@@ -32,7 +32,7 @@
 <div class="container-fluid">
 
 			<div id="mysearch">
-			<?php include ("search.php");?>
+			<?php //include ("search.php");?>
 				
                         </div><!---search-->
 
@@ -53,19 +53,39 @@
   <!-- Tab panes -->
   <div class="tab-content">
 		<div role="tabpanel" class="tab-pane active" id="Map">
-			<div id ="body-map" style="height:480px;">
-	
-				<div id="map-canvas"></div>
+			
+	 <?php echo $map['html'];?>
+				
 		
 	
-			</div><!--body-map-->
+			
 
 	
 	
 		</div><!---tab-map-->
 		<div role="tabpanel" class="tab-pane" id="List">
-				<div id ="body-map" style="height:480px;">
-				</div>
+				
+                                  
+    <div class="row">
+       
+       <?php foreach($info as $list_info)
+                                       {?>
+        <div class="col-xs-2">
+    <div class="thumbnail">
+      <img src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg" alt="...">
+      <div class="caption"><?php echo $list_info['address'];?> </div>
+     <br> Price:<?php echo $list_info["price"];?>|Room:<?php echo $list_info["room_id"];?></br>
+   <br>  Parking:<?php echo $list_info["parking_id"];?>|Poperty Type:<?php echo $list_info["property_type_id"];?></br>
+         
+        <br>  <p><?php echo $list_info["description"];?></p></br>
+    </div>
+        </div>
+       <?php  }?>
+          
+    </div>
+                                       
+                                     
+				
 	
 		</div><!--tab-list-->
    

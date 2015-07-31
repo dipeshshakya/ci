@@ -40,14 +40,15 @@ class User_model extends CI_model{
 				foreach($query->result() as $rows)
                                         {
 					$newdata=array('id'=>$rows->user_id,
-									'firstname'=>$rows->firstname,
-									'lastname'=>$rows->lastname,
-									'address'=>$rows->address,
-									
-									'email'=>$rows->email,
-				
-                                                                        'logged_in'=>TRUE,
-									);
+                                              'name'=>$rows->firstname . ' ' . $rows->lastname,
+                                                        //'firstname'=>$rows->firstname,
+                                                       // 'lastname'=>$rows->lastname,
+                                                        'address'=>$rows->address,
+                                                        'Phone'=>$rows->Phone,
+                                                        'email'=>$rows->email,
+
+                                                        'logged_in'=>TRUE,
+                                                        );
 					
 					}
 					$this->session->set_userdata($newdata);

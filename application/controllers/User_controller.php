@@ -30,72 +30,39 @@ class User_controller extends CI_Controller {
 			  
                   
                     $this->User_model->add_user();
-                    $this ->load->view('profile');
+                   
+                    $this->session->set_flashdata('success_message','Registration Successful');
+					// grab user input
+                    $email =$this->input->post('email');
+                    $password = $this->input->post('password');
+
+        // Validate the user can login
+        $result = $this->User_model->validate($email,$password);
+        // Now we verify the result
+                if( $result==TRUE){
+                 
+                // If user did validate, 
+                    // Send them to members area
+                    $this->load->view('header');
+                     $this->load->view('navbar2');
+                     $this->load->view('tabs2');
+                      $this->load->view('footer');
+                }
+					
+                  //  $data['msg']='Register successful';
+                  //  $this ->load->view('profile',$data);
 
                     }
 		else
 		{  
-                    
-                    $this->start_session();
+                        $this->load->view('home');
+                    //$this->start_session();
 		
 		}
-	}//signup
+	}
         
-        
-        
-        
- ///////////////////////////////////////////////////////////////////////////////
-        
-        //session function
-///////////////////////////////////////////////////////////////////////////////        
-        
-        
-       public function start_session()
-        {
-            
-            
-              if(($this->session->userdata('email')!=""))
-                    {
-                     $this->load->view('profile');
-                    }
-                    else{
-                    $data['error']="please input valid ";
-                     $this->load->view('home',$data);
-                  
-                    }
-        }
-//start_session() end
-         
-        
-        
-//////////////////////////////////////<<<<<login>>>>>>>>///////////////////////////////////////////////////////////////////////        
-
-        
-//     public function login()
-//    {
-//        
-//          //set validations
-//         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-//         $this->form_validation->set_rules("password", "Password", "trim|required");
-//          if ($this->form_validation->run() == TRUE)
-//         {
-//              
-//           
-//               $auth=$this->User_model->login($this->input->post("email"),$this->input->post("password"));
-//                    if($auth)
-//                    {
-//                        redirect('profile');
-//                    }
-//                   else {
-//                       $this->start_session(); 
-//                    }
-//          }  
-//        else {
-//           $this->start_session();
-//        }
-//
-//           }//login
-
+      /////////////////////////////////////////////end-signup//////////////////////////////////////////////////////  
+  
  public function login(){
        // grab user input
                     $email =$this->input->post('email');
@@ -105,17 +72,23 @@ class User_controller extends CI_Controller {
         $result = $this->User_model->validate($email,$password);
         // Now we verify the result
                 if( $result==TRUE){
-                    
+                 
                 // If user did validate, 
                     // Send them to members area
-                    $this->load->view('profile');
-                 
+                    $this->load->view('header');
+                     $this->load->view('navbar2');
+                     $this->load->view('tabs2');
+                      $this->load->view('footer');
                 }
                 else{
                        
                     // If user did not validate, then show them login page again
-                 $data['error']="please use valid email or register now";
-                 $this->load->view('home',data);
+                if(isset($this->session->userdata['logged_in'])){
+                        $this->load->view('profile');
+                        }else{
+                        redirect('Welcome/index');
+                        }
+               
                  
                   
                     }
@@ -123,7 +96,7 @@ class User_controller extends CI_Controller {
         
             }
         
-        
+     /////////////////////////////////////////////////////////end-login-/////////////////////////////////////////////////   
 
        
         
