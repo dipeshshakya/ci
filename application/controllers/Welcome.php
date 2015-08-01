@@ -31,6 +31,7 @@ centreGot = true;';
         $data['map'] = $this->googlemaps->create_map();
         $data['info'] = $this->list_model->getlist();
                 $this->load->view('home', $data);
+                 
     }
 
 }

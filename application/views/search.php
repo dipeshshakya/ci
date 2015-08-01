@@ -12,7 +12,6 @@ padding:0;
 	margin:5px;
 
 	
-	
 }
 .btn{
 	margin:5px;
@@ -22,17 +21,37 @@ padding:0;
 .dropdown{
 	margin-left:-30px;
 }
-
+    .rows{
+		  height:78px;
+		  width:1000px;
+		  background-color:#BEE8D9;
+		  z-index:5;
+		  opacity:0.9;
+		  padding:5px;	  
+		  display: none;
+		  margin-top:0px;
+		  position:absolute;
+		  margin-left:220px;
+		  border-radius:8px;
+                   // display:none;
+                    border:5px outset #59917D;
+                     height: auto !important;
+                    overflow: visible !important;
+			
+			
+	  }
+   
 .dropdown-menu{
     z-index:30; 
 }
+
 </style> 
 
 
-<div class="row">
+   
 
-	
-           
+    
+<div class="rows">           
             <!-- searchForm -->
 <ul class="horizontal">    <!-- Text input-->
 			<li> <a href="#"> <div class="control-group">
@@ -110,3 +129,4 @@ padding:0;
 </div>
     </ul>
 	</div>
+      

@@ -10,6 +10,14 @@ ul.social-network li {
 	display: inline;
 	margin: 0 5px;
 }
+#footerbg{ background: 
+  /* color overlay */ 
+    linear-gradient(
+      rgba(240, 212, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),
+    /* image to overlay */
+    url(http://images.cdn.fotopedia.com/_avPIZmqM3w-7z161LH_268-hd.jpg);}
 
 
 /* footer social icons */
@@ -86,7 +94,8 @@ a.socialIcon:hover, .socialHoverClass {
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <!--<link type="text/css" href="assets/css/tabs2.css" rel="stylesheet">-->
 
-<footer style="background-color:#D3E2FF;">
+<footer>
+    <div id="footerbg">
 <div class="container-fluid" >
 <div class="row">
   <div class="col-xs-6 col-sm-4">
@@ -123,9 +132,16 @@ a.socialIcon:hover, .socialHoverClass {
 					<!--<a class="btn btn-lg btn-success big-btn android-btn" href="#">
   				<img width="70px" class="pull-left" src="http://www.userlogos.org/files/logos/jumpordie/google_play_04.png"><div class="btn-text"><small>Available on</small><br><strong>Google Play</strong></div></a>					
 		 </div>-->
-</div>		
-
+</div>	
+   
+</div>
+    <div class="row">
+            <p><center><a href="#">OnlineRental.com</a> <p class="footertext">Copyright 2014</p></center></p>
+        </div>
+    </div>
+    </div>    
 </footer>
+
     
    
 

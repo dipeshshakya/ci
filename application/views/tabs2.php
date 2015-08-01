@@ -1,124 +1,13 @@
 
-<style type="text/css">
-   #map-canvas { height:480px;
-                 margin-bottom:50px;
-                 padding:0px;
-                 margin-top:0px;
-	  }
-    #mysearch{
-		  height:78px;
-		  width:1000px;
-		  background-color:#BEE8D9;
-		  z-index:5;
-		  opacity:0.9;
-		  padding:5px;	  
-		  
-		  margin-top:0px;
-		  position:absolute;
-		  margin-left:250px;
-		  border-radius:8px;
-                    display:none;
-                    border:5px outset #59917D;
-                     height: auto !important;
-                    overflow: visible !important;
-			
-			
-	  }
-          
-	  
-    </style>
-    
+
 
 <div class="container-fluid">
-<!-------------------------------------------------start search-------------------------------------------------------->
-			<div id="mysearch">
-			<div class="row">
 
-	   
-           
-            <!-- searchForm -->
-<ul class="horizontal">    <!-- Text input-->
-			<li> <a href="#"> <div class="control-group">
-              <label class="control-label" for="address"></label>
-              <div class="controls">
-                <input required="" id="address" name="address" type="text" class="form-control" placeholder="Search location" class="input-small" style="width:280px;">
-              </div>
-            </div></a>
-			</li>
-			<li><a href="#">
-		<div class="control-group">
-              <label class="control-label"></label>
-              <div class="controls">
-                <input id="MINprice"  type="text" class="form-control" placeholder="Minprice" class="input-small" style="width:80px;top:10px;">
-              </div>
-            </div></a>
-		</li>
-		
-		<li>
-		<a href="#">
-		<div class="control-group">
-              <label class="control-label"></label>
-              <div class="controls">
-                <input  id="Maxprice"  type="text" class="form-control" placeholder="Maxprice" class="input-small" style="width:80px;top:10px;">
-              </div>
-        </div>
-		</a>
-		</li>
-		
-                
-    <li>                  
-    <div class="btn-group">
-      <a class="btn dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Property Type<span class="caret"></span></a>
-      <ul class="dropdown-menu"aria-labelledby="dropdownMenuDivider">
-          <li class="dropdown-header">Property type</li>
-            <li role="separator" class="divider"></li>
-        <li><a href="#">Apartment</a></li>
-        <li><a href="#">House</a></li>
-        <li><a href="#">Room</a></li>
-        
-      </ul>
-    </div>
-    </li>
-    
-    
-    <li>
-		   <div class="btn-group">
-      <a class="btn dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Room<span class="caret"></span></a>
-      <ul class="dropdown-menu"aria-labelledby="dropdownMenuDivider">
-         <li class="dropdown-header">Room</li>
-         <li role="separator" class="divider"></li>
-        <li><a href="#">1+</a></li>
-        <li><a href="#">2+</a></li>
-        <li><a href="#">3+</a></li>
-        <li><a href="#">4+</a></li>
-        <li><a href="#">5+</a></li>
-      </ul>
-    </div>
-    </li>
-	
-    <li>
-		   <div class="btn-group">
-      <a class="btn dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Parking<span class="caret"></span></a>
-      <ul class="dropdown-menu"aria-labelledby="dropdownMenuDivider">
-          <li class="dropdown-header">Parking</li>
-         <li role="separator" class="divider"></li>
-        <li><a href="#">Yes</a></li>
-        <li><a href="#">No</a></li>
-       
-      </ul>
-    </div>
-    </li>
-<div class="btn-group">
-      <button type="button" id="btnSearch" class="btn btn-primary"onclick="codeAddress()">Search</button>
-</div>
-    </ul>
-	</div>
+			
 
-				
-                        </div>
-    <!----------------------------------------------------end-search--------------------------------------------------------->
+   
    <div class="row">
-        <div  class="col-xs-3"> 
+        <div  class="col-md-3"> 
             
            
      <!----------------------------------------------------user- profile------------------------------------------------------->
@@ -132,15 +21,14 @@
                               <div class="row">
                                   <div class="col-md-12">
                                 <br> <center> <img src="http://placehold.it/180x200" alt="" class="img-rounded img-responsive" /><center></br>
-                                 
-                                 <strong>  <h4><?php echo $this->session->userdata('name'); ?></h4></strong>
+                  
+                    <br><strong>  <h4><?php echo $this->session->userdata('name'); ?></h4></strong></br>
                             
-                              <br>  <i class="glyphicon glyphicon-map-marker">
-                                </i><small><?php echo $this->session->userdata('address'); ?></small></br>
-                                <br>
-                                    <i class="glyphicon glyphicon-envelope"></i><?php echo $this->session->userdata('email'); ?>
-                                    </br>
+                    <br> <i class="glyphicon glyphicon-map-marker"></i><small><?php echo $this->session->userdata('address'); ?></small></br>
+                    <br>  <i class="glyphicon glyphicon-envelope"></i><?php echo $this->session->userdata('email'); ?></br>
                                    
+                                  
+               
                                  
                                  
                                 <!-- Split button -->
@@ -159,11 +47,11 @@
               </div><!---col-md-3 well-lg----->
     <!------------------------------profile sidebar-end-------------------------------------------------------------------->
               
-            <div class="col-xs-9 ">
+            <div class="col-md-9 ">
                    <div align="center" style="color:#F00"><strong><?php echo $this->session->flashdata('success_message');?></strong></div>
            
            <div align="center" style="color:#F00"><strong><?php echo $this->session->flashdata('success_upload');?></strong></div>
-                <div class="container">
+           <div class="container" style="width:900px;">
                 
                     <!-- tabs right -->
 
@@ -183,7 +71,7 @@
                             
                             
                             
-                                    <div role="tabpanel" class="tab-pane active" id="Mypost">
+                                    <div role="tabpanel" class="tab-pane" id="Mypost">
                                                       <div id ="body-map" style="height:480px;">
                                                          
                                                       </div>
@@ -199,7 +87,7 @@
                                           <div class="row">
                                               <div class="col-xs-6">
 
-            <div class="pannel"> 
+            <div class="pannel"style="box-shadow:1px 1px 5px 1px #000;margin-top:10px ;margin-bottom: 10px;"> 
                  <div class="panel-body ">
            
             <form  class="form-horizontal">    <!-- Text input-->
@@ -320,8 +208,7 @@
                      </div><!---pannel body-->
     </div><!--pannel-->
     </div><!----col-xs-6---->
-                                          
-    </div><!----row---->
+    
    
   
 
@@ -332,7 +219,7 @@
 
                                             
 
-
+</div>
 
     </div><!----addlisting end------------->
   <!----------------------------------------------tab-addlisting-end-------------------------------------------------------------------------------------------------->
@@ -349,6 +236,7 @@
 
                 </div><!----container-->
              </div><!---col-xs-9 ----->
+             
                         
 	</div><!---row--->	
 </div><!---container--->       
