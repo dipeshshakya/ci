@@ -64,6 +64,23 @@ class User_model extends CI_model{
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
     
+    function mypost() {
+    $data=array();
+
+     $id=$this->session->userdata['id'];
+    $this->db->where('user_id',$id);    
+   $query=$this->db->get('upload',20);
+   if($query->num_rows()>0)
+       {
+       $data=$query->result_array();
+       $query->free_result();
+       return $data;
+        }
+  
+  
+    }
+        
+    
      }//user_model
 
                 

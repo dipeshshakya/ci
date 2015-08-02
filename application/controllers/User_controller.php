@@ -7,6 +7,7 @@ class User_controller extends CI_Controller {
     function user_controller(){
 		parent::__construct();
 		$this->load->model('User_model');
+                $this->load->helper('url');
 		//$this->load->library('session');
 		}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -43,10 +44,7 @@ class User_controller extends CI_Controller {
                  
                 // If user did validate, 
                     // Send them to members area
-                    $this->load->view('header');
-                     $this->load->view('navbar2');
-                     $this->load->view('tabs2');
-                      $this->load->view('footer');
+                  $this->load->view('profile');
                 }
 					
                   //  $data['msg']='Register successful';
@@ -70,21 +68,19 @@ class User_controller extends CI_Controller {
 
         // Validate the user can login
         $result = $this->User_model->validate($email,$password);
+         $data['mpost']=$this->User_model->mypost();
         // Now we verify the result
                 if( $result==TRUE){
-                 
+                  
                 // If user did validate, 
                     // Send them to members area
-                    $this->load->view('header');
-                     $this->load->view('navbar2');
-                     $this->load->view('tabs2');
-                      $this->load->view('footer');
+                    $this->load->view('profile',$data);
                 }
                 else{
                        
                     // If user did not validate, then show them login page again
                 if(isset($this->session->userdata['logged_in'])){
-                        $this->load->view('profile');
+                        $this->load->view('profile',$data);
                         }else{
                         redirect('Welcome/index');
                         }
@@ -96,35 +92,7 @@ class User_controller extends CI_Controller {
         
             }
         
-     /////////////////////////////////////////////////////////end-login-/////////////////////////////////////////////////   
-
-       
-        
-        
-            
- //////////////////////////////////////// <login ends>//////////////////////////////////////////////////////////////////////           
-            
-            //logout
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////            
-//        public function logout()
-//            {
-//             $newdata = array(
-//             'user_id'   =>'',
-//             'firstname'  =>'',
-//              'lastname'  =>'',
-//             'email'     => '',
-//             'logged_in' => FALSE,
-//             );
-//             $this->session->unset_userdata($newdata );
-//             $this->session->sess_destroy();
-//             $this->start_session();
-//            }
-//        
-        //logout_ends
-        
-        
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-        
+     /////////////////////////////////////////////////////////end-login-/////////////////////////////////////////////////          
         
          function logout()
  {
@@ -133,11 +101,10 @@ class User_controller extends CI_Controller {
    redirect('index.php', 'refresh');
  }
         
+   ///////////////////////////////////////////////////////model call database///////////////////////////////////////////////     
+    
         
-        
-        
-        
-        
+   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
         
 }//user_controller
 ?>

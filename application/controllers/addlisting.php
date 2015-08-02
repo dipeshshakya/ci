@@ -33,8 +33,9 @@ class addlisting extends CI_Controller{
       
           //  $this->do_upload();
            if(isset($this->session->userdata['logged_in'])){
-                       $this->Addlisting_model->add_post();
-                         $this->session->set_flashdata('success_upload','Successfully posted');
+                        $id=$this->session->userdata['id'];
+                          $this->Addlisting_model->add_post($id);
+                        
                           $this->load->view('profile');
                         }else{
                         redirect('Welcome/index');
@@ -70,10 +71,7 @@ class addlisting extends CI_Controller{
     }
     
     /////////////////////////////////////////////////////////////////////
-function mypost()
-{
-    
-}
+
 //    
 //    function do_upload()
 //{
