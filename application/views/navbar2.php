@@ -2,7 +2,7 @@
 
 
 
-<nav class="navbar navbar-custom  navbar-static-top nav navbar-inverse" role="banner"style="height:60px;border-bottom-color:grey;">
+<nav class="navbar   navbar-static-top nav navbar-default" role="banner"style="height:60px;border-bottom-color:grey;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -19,7 +19,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
           <li class="active"><a href="index.php" title="HomePage" target="_self"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbspHome</a></li>
-        <li><a href="#" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true" style="font-size: 20px;"></span></a></li>    
       </ul>
 							
 							
@@ -28,8 +27,7 @@
       
       
       <ul class="nav navbar-nav navbar-right">
-	  
-        
+	
                
 		<li><?php echo anchor('User_controller/logout', 'Logout'); ?></li>
       </ul>

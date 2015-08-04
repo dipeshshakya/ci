@@ -8,6 +8,8 @@ class addlisting extends CI_Controller{
        // $this->load->model('Addlisting_model');
         
           $this->load->database();
+      
+          
        
         
     }
@@ -27,7 +29,7 @@ class addlisting extends CI_Controller{
         $this->form_validation->set_rules('parking', 'Parking');
         $this->form_validation->set_rules('description', 'Description', 'trim|required|callback_alpha_only_space');
        
-
+       
         if ($this->form_validation->run() == TRUE)
         { 
       
@@ -35,8 +37,7 @@ class addlisting extends CI_Controller{
            if(isset($this->session->userdata['logged_in'])){
                         $id=$this->session->userdata['id'];
                           $this->Addlisting_model->add_post($id);
-                        
-                          $this->load->view('profile');
+                          redirect('User_controller/login');
                         }else{
                         redirect('Welcome/index');
                         }
@@ -46,7 +47,7 @@ class addlisting extends CI_Controller{
         { 
              if(isset($this->session->userdata['logged_in'])){
                        $this->session->set_flashdata('validation_error','Enter the correct input');
-                          $this->load->view('profile');
+                          redirect('User_controller/login');
                         }else{
                         redirect('Welcome/index');
                         }

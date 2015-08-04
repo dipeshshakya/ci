@@ -17,9 +17,17 @@
 		<!--<script type="text/javascript"
       	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjOLrL0eip0j_VtsVopOwO9X35TlkxX0"></script>
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
-        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>      
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/roboto.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.3.0/css/material-fullpalette.min.css">
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>
         
-        
+     
+          
         <script type="text/javascript">
 		var centreGot = false;
 	</script>

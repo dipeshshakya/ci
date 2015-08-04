@@ -12,19 +12,17 @@
            
      <!----------------------------------------------------user- profile------------------------------------------------------->
                   
-                  <div class="panel panel-info">
-                            <div class="panel-heading">
-                                <h2 class="panel-title"><center>Profile</center></h2>
-                            </div>
+     <div class="panel ">
+                           
                             <div class="panel-body">
                            
                               <div class="row">
                                   <div class="col-md-12">
-                                <br> <center> <img src="http://placehold.it/180x200" alt="" class="img-rounded img-responsive" /><center></br>
+                                <br> <center> <i class="fa fa-user" style="font-size: 120px;"></i><center></br>
                   
-                    <br><strong>  <h4><?php echo $this->session->userdata('name'); ?></h4></strong></br>
+                    <strong>  <h4><?php echo $this->session->userdata('name'); ?></h4></strong>
                             
-                    <br> <i class="glyphicon glyphicon-map-marker"></i><small><?php echo $this->session->userdata('address'); ?></small></br>
+                    <br> <i class="glyphicon glyphicon-map-marker"></i><?php echo $this->session->userdata('address'); ?></br>
                     <br>  <i class="glyphicon glyphicon-envelope"></i><?php echo $this->session->userdata('email'); ?></br>
                                    
                                   
@@ -74,10 +72,10 @@
                                     <div role="tabpanel" class="tab-pane active" id="Mypost">
                 <div class="pannel" style="margin: 10px;">
                       <div class="row">
-                          <div class="col-md-6">
+                          
                          <?php foreach($mpost as $post)
                                        {?> 
-            		
+            		<div class="col-md-6">
 	<div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
                         <div class="media">
                              <div class="row">
@@ -94,17 +92,9 @@
                                   <a href="#" target="_parent">Rs:<?php echo $post['price'];?> <small class="pull-right"><?php echo $post['address'];?></small></a></h4>
                                 <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
                                   
-
-                                  
-
-                                    <li><?php echo $post['room_id'];?>Room</li>
-
-                                   
-
-                                  
-                                </ul>
-
-                            
+                                  <li><?php echo $post['room_id'];?>Room</li>
+                                                              
+                                </ul>                    
 
                                 <p class="hidden-xs"><?php echo $post['description'];?>
                                 </p>
@@ -113,8 +103,9 @@
                         </div>
                     </div><!-- End Listing-->
 			  </div>
-                          <?php  }?>
                               </div>
+                          <?php  }?>
+                            
                           </div>
                         </div>
                 </div><!--mypost-->

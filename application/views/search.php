@@ -1,4 +1,63 @@
-<style type="text/css">
+<div class="container-fluid">
+<div class="row">
+    
+        <div class="col-md-8 pull-left" >
+<?php echo form_open("search_post/search_result");?>
+           <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="" class="form-control" placeholder="Search location,price" name="search_post" id="search_post">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+         <?php form_close();?>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<style type="text/css">
 ul.horizontal li{
 display:block;
 float:left;
@@ -33,7 +92,7 @@ padding:0;
 		  position:absolute;
 		  margin-left:220px;
 		  border-radius:8px;
-                   // display:none;
+                    display:none;
                     border:5px outset #59917D;
                      height: auto !important;
                     overflow: visible !important;
@@ -52,8 +111,8 @@ padding:0;
 
     
 <div class="rows">           
-            <!-- searchForm -->
-<ul class="horizontal">    <!-- Text input-->
+             searchForm 
+<ul class="horizontal">     Text input
 			<li> <a href="#"> <div class="control-group">
               <label class="control-label" for="address"></label>
               <div class="controls">
@@ -75,7 +134,7 @@ padding:0;
 		<div class="control-group">
               <label class="control-label"></label>
               <div class="controls">
-                <input  id="Maxprice"  type="text" class="form-control" placeholder="Maxprice" class="input-small" style="width:80px;top:10px;">
+                <input  id="Maxprice"  type="text" class="form-control" placeholder="Maxprice" class="input-small" style="width:90px;top:10px;">
               </div>
         </div>
 		</a>
@@ -129,4 +188,4 @@ padding:0;
 </div>
     </ul>
 	</div>
-      
+      -->

@@ -1,4 +1,6 @@
-
+<head>
+    <?php echo $map['js']; ?>
+</head>
 
 
 <div class="container-fluid ">
@@ -6,7 +8,7 @@
         <div class="col-xs-8">
              <?php echo $map['html'];?>
             </div>
-        <div class="col-xs-4">
+        <div class="col-xs-4" >
            
                      <ul class="nav nav-tabs">
                     <li class="active"><a href="#Map"  data-toggle="tab">Recent Listing</a></li>
@@ -15,7 +17,7 @@
 
 <div class="tab-content">
 		<div role="tabpanel" class="tab-pane active" id="Map">
-                    <div style=" height: 400px;overflow-y : scroll;">       
+                    <div style=" height: 400px;overflow-y : auto;">       
                     <div class="row">
                          <?php foreach($info as $list_info)
                                        {?> 
@@ -54,7 +56,7 @@
                             </div>         
                         </div>
                     </div><!-- End Listing-->
-			  </div>
+	</div>
                           <?php  }?>
                          </div>
                        	

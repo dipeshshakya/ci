@@ -1,6 +1,15 @@
 
     
-    
+  .media:hover {
+    margin-top: +8px;
+    border: 1px solid rgb(153, 200, 250);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 3px 3px;
+    background: rgba(153, 200, 250, 0.1);
+    transition: 0.99s;
+}
+.navbar-default .navbar-brand {
+    color: #d6d6d6;
+}
     
 body {
     color: #888;   

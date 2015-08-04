@@ -15,9 +15,10 @@ ul.social-network li {
     linear-gradient(
       rgba(240, 212, 0, 0.45), 
       rgba(0, 0, 0, 0.45)
-    ),
+    )
     /* image to overlay */
-    url(http://images.cdn.fotopedia.com/_avPIZmqM3w-7z161LH_268-hd.jpg);}
+   // url(http://images.cdn.fotopedia.com/_avPIZmqM3w-7z161LH_268-hd.jpg)
+   ;}
 
 
 /* footer social icons */
@@ -84,6 +85,9 @@ a.socialIcon:hover, .socialHoverClass {
 	-ms-transition: all 0.8s;
 	transition: all 0.8s;
 }
+.frow{
+    border-top: 2px solid  #008080;
+}
 
 
 
@@ -97,23 +101,24 @@ a.socialIcon:hover, .socialHoverClass {
 <footer>
     <div id="footerbg">
 <div class="container-fluid" >
-<div class="row">
+<div class="row frow">
   <div class="col-xs-6 col-sm-4">
-  <strong><br>Contact US</br></strong>
+      <center><strong><br>Contact US</br></strong>
   Kantipur Engineering College<br>
   Dhapakhel,lalitpur<br>
   <abbr title="Phone">P:</abbr>+977-01-551100
-
+</center>
 </div>
   <div class="col-xs-6 col-sm-4">
-  <strong><br>Follow US</strong></br>
+  <center><strong><br>Follow US</strong></br>
   <ul class="social-network social-circle">
                         <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
                         <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>	
+                    </ul>
+      </center>
   </div>
   
   <!-- Optional: clear the XS cols if their content doesn't match in height -->
@@ -135,7 +140,7 @@ a.socialIcon:hover, .socialHoverClass {
 </div>	
    
 </div>
-    <div class="row">
+    <div class="row frow">
             <p><center><a href="#">OnlineRental.com</a> <p class="footertext">Copyright 2014</p></center></p>
         </div>
     </div>

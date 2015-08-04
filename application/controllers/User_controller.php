@@ -44,7 +44,8 @@ class User_controller extends CI_Controller {
                  
                 // If user did validate, 
                     // Send them to members area
-                  $this->load->view('profile');
+                    $data['mpost']=$this->User_model->mypost();
+                     $this->load->view('profile',$data);
                 }
 					
                   //  $data['msg']='Register successful';

@@ -1,11 +1,12 @@
 
 
 
-<head>
-    <?php echo $map['js']; ?>
-</head>
-<nav class="navbar navbar-custom  navbar-static-top nav navbar-inverse" role="banner"style="height:60px;border-bottom-color:grey;">
-  <div class="container-fluid">
+
+<nav class="navbar  navbar-static-top " role="banner"style="height:60px;border-bottom-color:grey;">
+    <div class="row">
+        <div class="container-fluid">
+        <div class="col-lg-2">
+    
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -16,32 +17,33 @@
       </button>
       <a class="navbar-brand" href="#">OnlineRentalSystem</a>
     </div>
-
+        </div>
+            <div class="col-lg-10">
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-          <li class="active"><a href="index.php" title="HomePage" target="_self"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbspHome</a></li>
-        <li><a href="#" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true" style="font-size: 20px;"></span></a></li>    
-      </ul>
-							
-							
-		
+          <li class="active"><a href="welcome/index.php" title="HomePage" target="_self"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbspHome</a></li>
+          
+	</ul>	
+            
       
       
-      
-      <ul class="nav navbar-nav navbar-right">
-	  
+      <ul class="nav navbar-nav navbar-right ">
+          
+          
         <li><p class="navbar-text">Already have an account?</p></li>
     
 		<li><a href="#" data-toggle="modal" data-target="#myModal">login</a></li>
+       
       </ul>
     </div><!-- /.navbar-collapse -->
+    </div>
   </div><!-- /.container-fluid -->
- 
+ </div>
 </nav>
 
 
-<!---modal--->
+<!------------------------------------------------modal------------------------------------------------------------->
 <div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
