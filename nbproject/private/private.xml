@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+        <file>
+            <url>application/models/search_model.php</url>
+            <bookmark id="2">
+                <name/>
+                <line>38</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>application/controllers/User_controller.php</url>
+            <bookmark id="1">
+                <name/>
+                <line>9</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ci/application/views/navbar2.php</file>
-            <file>file:/C:/xampp/htdocs/ci/application/views/navbar1.php</file>
+            <file>file:/C:/xampp/htdocs/ci/application/views/getsearch.php</file>
             <file>file:/C:/xampp/htdocs/ci/application/controllers/search_post.php</file>
-            <file>file:/C:/xampp/htdocs/ci/application/views/search.php</file>
+            <file>file:/C:/xampp/htdocs/ci/application/models/Addlisting_model.php</file>
             <file>file:/C:/xampp/htdocs/ci/application/models/search_model.php</file>
-            <file>file:/C:/xampp/htdocs/ci/application/models/User_model.php</file>
-            <file>file:/C:/xampp/htdocs/ci/application/controllers/list_controller.php</file>
+            <file>file:/C:/xampp/htdocs/ci/application/views/tabs2.php</file>
         </group>
     </open-files>
 </project-private>
