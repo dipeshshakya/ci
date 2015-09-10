@@ -22,6 +22,7 @@ class User_controller extends CI_Controller {
         $this->form_validation->set_rules('lastname', 'Lastname', 'required');
         $this->form_validation->set_rules('address', 'Address', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
+          $this->form_validation->set_rules('Phone', 'Phone', 'required');
         $this->form_validation->set_rules('passconf', 'Re-Enter Password', 'required|matches[password]');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 
@@ -95,32 +96,8 @@ class User_controller extends CI_Controller {
 
     ///////////////////////////////////////////////////////map draggable///////////////////////////////////////////////     
     function map_view() {
-        $data['mpost'] = $this->User_model->mypost();
-        $config['center'] = 'auto';
-        $config['onboundschanged'] = 'if (!centreGot) {
-                                    var mapCentre = map.getCenter();
-                                    marker_0.setOptions({
-                                            position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng()) 
-                                    });
-                            }
-                            centreGot = true;';
-        $config['places'] = TRUE;
-        $config['placesAutocompleteInputID'] = 'address';
-
-        $this->googlemaps->initialize($config);
-
-// set up the marker ready for positioning 
-// once we know the users location
-
-        $marker = array();
-
-        $marker['draggable'] = true;
-        $marker['ondragend'] = 'latlng(event.latLng.lat(), event.latLng.lng());';
-        $this->googlemaps->add_marker($marker);
-        $data['map'] = $this->googlemaps->create_map();
-
-
-
+       $data['mpost'] = $this->User_model->mypost();
+      
 
         $this->load->view('header');
         $this->load->view('navbar2');
@@ -129,15 +106,19 @@ class User_controller extends CI_Controller {
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
-//   function latlng(){
-//     
-//        $lat=event.latLng.lat();
-//        $lng=event.latLng.lng();
-//               
-//$this->session->set_userdata($newdata);
-//       
-//   }
-}
+// function latlng($lati,$lngi){
+//        
+////   }
+//      $lat=lati;
+//     $lng=Lngi;
+//     echo ($lat+ "," + $lng);
+//	
+	
+     
+            
 
-//user_controller
+
+
+
+}//user_controller
 ?>

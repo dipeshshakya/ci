@@ -11,10 +11,7 @@ class addlisting extends CI_Controller {
 
     public function uploadpost() {
         $this->load->model('Addlisting_model');
-        //fetch data from  and parking tables
-//        $data['property_type'] = $this->Addlisting_model->get_property_type();
-//        $data['room'] = $this->Addlisting_model->get_room();
-//        $data['parking'] = $this->Addlisting_model->get_parking();
+
         //set validation rules
         $this->form_validation->set_rules('address', 'Address', 'required|callback_alpha_only_space');
         $this->form_validation->set_rules('price', 'Price', 'trim|required|numeric');
@@ -33,14 +30,14 @@ class addlisting extends CI_Controller {
                 $this->Addlisting_model->add_post($id, $url);
                 redirect('User_controller/login');
             } else {
-                redirect('Welcome/index');
+                redirect('Welcome/index','refresh');
             }
         } else {
             if (isset($this->session->userdata['logged_in'])) {
                 $this->session->set_flashdata('validation_error', 'Enter the correct input');
                 redirect('User_controller/login');
             } else {
-                redirect('Welcome/index');
+                redirect('Welcome/index','refresh');
             }
         }
     }

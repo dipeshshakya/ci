@@ -1,4 +1,24 @@
-<style type="text/css">
+<style>
+    
+
+
+    ///////////////////////////////////////////////////////////////////
+    input[type="text"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family:verdana;
+  font-size: 15px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  
+}       
+.pannel .row  {
+        font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
+        font-size: 13px;
+    }
+    
     /* footer social icons */
     ul.social-network {
         list-style: none;

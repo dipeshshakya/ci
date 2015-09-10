@@ -29,8 +29,8 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <a class="pull-left" href="#" target="_parent">
-                                            <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg"></a>
-
+                                            <img alt="image" class="img-responsive" src="localhost/ci/<?php echo $list_info['image']; ?>"/>
+                                        </a>                
                                     </div>  
                                     <div class="col-md-8">
                                         <div class="media-body fnt-smaller">
@@ -53,7 +53,7 @@
                                             <p class="hidden-xs"><?php echo $list_info['description']; ?>
                                             </p>
                                         </div>
-                                        <a href="<?php echo base_url(); ?>/preview_controller/preview/<?php echo $list_info['post_id'] ?>?>">Details</a>
+                                        <a href="<?php echo base_url(); ?>preview_controller/preview/<?php echo $list_info['post_id']; ?>">Details</a>
                                     </div>         
                                 </div>
                             </div><!-- End Listing-->

@@ -1,8 +1,86 @@
 
 <head>
-    <?php echo $map['js']; ?>
 
-</head>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="google_dynamic_map.js"></script>
+
+
+</head> 
+
+
+
+
+<script type="text/javascript">
+
+    var latitude = 27.715587;
+    var longitude = 85.325856;
+
+    window.onload = function() {
+        document.getElementById('addlocationbtn').style.display = 'none';
+    }
+
+    function getLoc() {
+
+
+// Set static latitude, longitude value
+        var latlng = new google.maps.LatLng(27.715587, 85.325856);
+        // Set map options
+        var myOptions = {
+            zoom: 16,
+            center: latlng,
+            panControl: true,
+            zoomControl: true,
+            scaleControl: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        // Create map object with options
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        // Create and set the marker
+        marker = new google.maps.Marker({
+            map: map,
+            draggable: true,
+            position: latlng
+        });
+        // Register Custom "dragend" Event
+        google.maps.event.addListener(marker, 'dragend', function() {
+
+            // Get the Current position, where the pointer was dropped
+            var point = marker.getPosition();
+            // Center the map at given point
+            map.panTo(point);
+            // Update the textbox
+            latitude = point.lat();
+            longitude = point.lng();
+
+            document.getElementById('addlocationbtn').style.display = 'block';
+
+
+        });
+
+
+
+    }
+
+    function SaveLocation() {
+        getLoc();
+        var lat = latitude;
+        var lng = longitude;
+        document.getElementById('lat').value = lat;
+        document.getElementById('lng').value = lng;
+        document.getElementById('myForm');
+
+
+
+//        alert(lat+ "," + lng);
+
+//	window.location.href="<?php echo base_url(); ?>addlisting/uploadpost?w1="+latitude+"&w2="+longitude;
+    }
+
+
+
+
+
+</script>
 
 
 <div class="container-fluid">
@@ -77,39 +155,47 @@
                                                 <div class="pannel" style="margin: 10px;">
                                                     <div class="row">
 
-                                                        <?php foreach ($mpost as $post) {
-                                                            ?> 
-                                                            <div class="col-md-6">
-                                                                <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
-                                                                    <div class="media">
-                                                                        <div class="row">
-                                                                            <div class="col-md-4">
-                                                                                <a class="pull-left" href="#" target="_parent">
-                                                                                    <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg"></a>
+                                                        <?php
+                                                        if ($mpost != null) {
 
-                                                                            </div>  
-                                                                            <div class="col-md-8">
-                                                                                <div class="media-body fnt-smaller">
-                                                                                    <a href="#" target="_parent"></a>
+                                                            foreach ($mpost as $post) {
+                                                                ?> 
+                                                                <div class="col-md-6">
+                                                                    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                                                                        <div class="media">
+                                                                            <div class="row">
+                                                                                <div class="col-md-4">
+                                                                                    <a class="pull-left" href="#" target="_parent">
+                                                                                        <img alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg"></a>
 
-                                                                                    <h4 class="media-heading">
-                                                                                        <a href="#" target="_parent">Rs:<?php echo $post['price']; ?> <small class="pull-right"><?php echo $post['address']; ?></small></a></h4>
-                                                                                    <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                                                                                </div>  
+                                                                                <div class="col-md-8">
+                                                                                    <div class="media-body fnt-smaller">
+                                                                                        <a href="#" target="_parent"></a>
 
-                                                                                        <li>Room<?php echo $post['room']; ?></li>|
-                                                                                        <li><?php echo $post['property_type']; ?></li>|
-                                                                                        <li>Parking:<?php echo $post['parking']; ?></li>
-                                                                                    </ul>                    
+                                                                                        <h4 class="media-heading">
+                                                                                            <a href="#" target="_parent">Rs:<?php echo $post['price']; ?> <small class="pull-right"><?php echo $post['address']; ?></small></a></h4>
+                                                                                        <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
 
-                                                                                    <p class="hidden-xs"><?php echo $post['description']; ?>
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>         
-                                                                        </div>
-                                                                    </div><!-- End Listing-->
+                                                                                            <li>Room<?php echo $post['room']; ?></li>|
+                                                                                            <li><?php echo $post['property_type']; ?></li>|
+                                                                                            <li>Parking:<?php echo $post['parking']; ?></li>
+                                                                                        </ul>                    
+
+                                                                                        <p class="hidden-xs"><?php echo $post['description']; ?>
+                                                                                        </p>
+                                                                                    </div>
+                                                                                </div>         
+                                                                            </div>
+                                                                        </div><!-- End Listing-->
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        <?php } ?>
+                                                                <?php
+                                                            }
+                                                        } else {
+                                                            echo "No data yet";
+                                                        }
+                                                        ?>
 
                                                     </div>
                                                 </div>
@@ -128,7 +214,7 @@
 
 
 
-                                                            <form  class="form-horizontal">    <!-- Text input-->
+                                                            <form id="myform" class="form-horizontal">    <!-- Text input-->
 
 
                                                                 <br>  <div class="form-group">
@@ -136,16 +222,18 @@
 
 
                                                                     <div class="col-sm-8">
-                                                                        <input type="text" class="form-control" name="address" id="address" placeholder="Enter the location" value="<?php echo set_value('address'); ?>" >
+                                                                        <input required="" type="text" class="form-control" name="address" id="address" placeholder="Enter the location" value="<?php echo set_value('address'); ?>" >
                                                                         <span class="text-danger"><?php echo form_error('address'); ?></span>
                                                                     </div>
                                                                 </div>	
                                                                 </br>
+                                                                <input type="hidden" name="lat" id="lat">
+                                                                <input type="hidden" name="lng" id="lng">
 
                                                                 <br>  <div class="form-group">
                                                                     <label for="Price" class="col-sm-4 control-label">Price:</label>
                                                                     <div class="col-sm-8">
-                                                                        <input type="text" class="form-control" id="price"  name="price"placeholder="Rs"value="<?php echo set_value('price'); ?>" >
+                                                                        <input required="" type="text" class="form-control" id="price"  name="price"placeholder="Rs"value="<?php echo set_value('price'); ?>" >
                                                                         <span class="text-danger"><?php echo form_error('price'); ?></span>
                                                                     </div>
                                                                 </div></br>
@@ -176,7 +264,7 @@
                                                                 <div class="form-group">
                                                                     <label for="room" class="col-sm-4 control-label">Room:</label>
                                                                     <div class="col-sm-8">
-                                                     
+
                                                                         <?php
                                                                         $room = array(
                                                                             '1' => '1+',
@@ -195,7 +283,7 @@
                                                                 <div class="form-group">
                                                                     <label for="room" class="col-sm-4 control-label">Parking:</label>
                                                                     <div class="col-sm-8">
-                                                      
+
                                                                         <?php
                                                                         $parking = array(
                                                                             'yes' => 'yes',
@@ -214,7 +302,7 @@
                                                                     <div class="col-sm-8">
 
 
-                                                                        <input type="file" id="img_upload" name="img_upload"   size="20" >
+                                                                        <input type="file" id="userfile"accept="image/x-png, image/jpeg" name="userfile">
 
 
                                                                     </div>
@@ -224,27 +312,56 @@
 
                                                                 <br>
                                                                 <label for="description" class="col-sm-4 control-label">Description:</label>
-                                                                <textarea id="description" class="form-control" rows="3" name="description"value="<?php echo set_value('description'); ?>"></textarea>           
+                                                                <textarea required="" id="description" class="form-control" rows="3" name="description"value="<?php echo set_value('description'); ?>"></textarea>           
                                                                 </br> 
-                                                                <br>
+
                                                                 <!-- Button -->
 
 
-                                                                <div class="controls control-group">
-                                                                    <button type="submit" id="confirm" name="confirm" class="btn btn-success" >confirm</button>
 
-                                                                </div>
-                                                                </br>
+
                                                             </form>
-<?php echo form_close(); ?>
+                                                            <?php echo form_close(); ?>
 
 
                                                         </div><!----col-xs-6---->
                                                         <div class="col-md-6">
-                                                            <div class="pannel" style="border-left :thick double black;">
-<?php echo $map['html']; ?>
+                                                            <!--  ------------------------------------------------------------map content-------------------------------------------     -->
+
+
+
+
+                                                            <div class="row" style="margin-top: 5px;">
+                                                                <div class="col-md-4">
+                                                                    <button class="button read_more" onClick="getLoc();">Show Map</button>
+                                                                </div>      
+                                                                <div class=" col-md-8 help-text " style="font-size: 10px;">
+                                                                    <p>Drag marker to locate your house,room.<p>
+                                                                </div></div>
+
+
+
+
+
+                                                            <div class="container">
+                                                                <div id="map_canvas" style="width:400px ;height:400px;margin-top:10px;margin-bottom:10px;"></div>
+
+                                                                <div class="controls control-group">
+                                                                    <button class="button read_more btn btn-success" onclick="SaveLocation();" id="addlocationbtn"type="submit"   >submit</button>
+
+                                                                </div>
+
                                                             </div>
-                                                        </div>
+
+
+
+
+
+
+
+
+
+                                                        </div><!--col md 6>
 
 
                                                     </div><!---pannel body-->
@@ -256,27 +373,34 @@
 
 
 
+                                                    </div>
                                                 </div>
-
                                             </div><!----addlisting end------------->
                                             <!----------------------------------------------tab-addlisting-end-------------------------------------------------------------------------------------------------->
+
                                             <div role="tabpanel" class="tab-pane" id="MyFavourite">
-                                                <div id ="body-map" style="height:480px;">
-
-                                                </div>
-
-                                            </div><!--tab-list-->
-
-
-                                        </div><!--tab-content-->
-
-
-                                    </div><!----container-->
-                                </div><!---col-xs-9 ----->
-
-
-                                </div><!---row--->	
-                                </div><!---container--->       
 
 
 
+                                            </div><!---tab fav---->
+
+
+                                        </div>
+                                    </div>
+
+                                </div><!--tab-list-->
+
+
+                                </div><!--tab-content-->
+
+
+                                </div><!----container-->
+                                <!--                                </div>-col-xs-9 ---
+
+
+                                </div>-row-	
+                                </div>-container-       -->
+
+
+
+                                <!---------------------------------------------------map------------------------------------------------->

@@ -28,8 +28,24 @@ centreGot = true;';
 // set up the marker ready for positioning 
 // once we know the users location
         $marker = array();
-        $this->googlemaps->add_marker($marker);
 
+        $marker['draggable'] = TRUE;
+        $marker['animation'] = 'BOUNCE';
+        $this->googlemaps->add_marker($marker);
+      
+//////////////////////////////marker from database/////////////////////////////////////////
+        //$coords = $this->list_model->getmarker(); 
+// Loop through the coordinates we obtained above and add them to the map
+//        if (is_array($coords) || is_object($coords)){       
+//                    foreach ($coords as  $coordinate) {
+//                 $marker = array();
+//                 $marker['position'] = $coordinate->lat.",". $coordinate->lng;
+//                 $marker['animation'] = 'DROP';
+//              //   $marker['title']= $coordinate->CordiName;
+//                // $marker['infowindow_content']=$coordinate->Address; 
+//
+// $this->googlemaps->add_marker($marker);
+//                       }
         $data['map'] = $this->googlemaps->create_map();
 
         $data['info'] = $this->list_model->getlist();

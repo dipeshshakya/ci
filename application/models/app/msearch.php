@@ -1,10 +1,10 @@
 <?php
 
-class search_model extends CI_Model {
+class msearch extends CI_Model {
 
     function get_search() {
 
-        $data = $this->input->post("search_post");
+        $data = $_POST['address'];
 
         $this->db->select('*');
 
@@ -21,13 +21,13 @@ class search_model extends CI_Model {
 
     function advance_search() {
 
-        $address = $this->input->post("address");
-        $data['minprice'] = $this->input->post("minprice");
-        $data['maxprice'] = $this->input->post("maxprice");
+        $address = $_POST["address"];
+        $data['minprice'] = $_POST["minprice"];
+        $data['maxprice'] = $_POST["maxprice"];
         $condition = "price BETWEEN " . "'" . $data['minprice'] . "'" . " AND " . "'" . $data['maxprice'] . "'";
-        $property_type = $this->input->post('property_type');
-        $parking = $this->input->post('parking');
-        $room = $this->input->post("room");
+        $property_type = $_POST['property_type'];
+        $parking = $_POST['parking'];
+        $room = $_POST["room"];
 
         $this->db->select('*');
 

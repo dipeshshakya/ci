@@ -14,9 +14,9 @@
                 <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/post.css">
 
                     <!--api key-->
-                    <!--<script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjOLrL0eip0j_VtsVopOwO9X35TlkxX0"></script>
-                    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
+<!--                 <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkjOLrL0eip0j_VtsVopOwO9X35TlkxX0"></script>-->
+                 <!--   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
                     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>   
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css">
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/roboto.min.css">

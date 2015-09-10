@@ -13,7 +13,7 @@ class User_model extends CI_model {
             'address' => $this->input->post('address'),
             'email' => $this->input->post('email'),
             'password' => $this->input->post('password'),
-            'Phone' => $this->input->post('Phone'),
+            'Phone' => $this->input->post('Phone')
         );
         $this->db->insert('register_user', $data);
     }
@@ -60,7 +60,8 @@ class User_model extends CI_model {
 
         $id = $this->session->userdata['id'];
         $this->db->where('user_id', $id);
-        $query = $this->db->get('upload', 20);
+        $this->db->order_by('post_id', 'desc');
+        $query = $this->db->get('upload',20);
         if ($query->num_rows() > 0) {
             $data = $query->result_array();
             $query->free_result();
@@ -68,7 +69,17 @@ class User_model extends CI_model {
         }
     }
 
-}
+//       public function postcomment() {
+//        $post_id = $this->uri->segment(3);
+//        $this->load->library('form_validation');
+//
+//        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+//        if ($this->form_validation->run() == TRUE) {
+//            $this->Preview_model->postcomment($post_id);
+//        }
+    }
+
+
 
 //user_model
 

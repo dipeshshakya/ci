@@ -18,7 +18,7 @@
 
 
                         <div class="col-xs-12 ">
-                            <input type="text" class="form-control" name="address" id="address" placeholder="Enter the location" value="" >
+                            <input type="text" class="form-control" name="address" id="address" placeholder="Enter the location" value="" required="" >
 
                         </div>
                     </div>	
@@ -27,11 +27,11 @@
                     <br>  <div class="form-group">
 
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="minprice"  name="minprice"placeholder="Min Price"value="" >
+                            <input type="text" class="form-control" id="minprice"  name="minprice"placeholder="Min Price"value="" required="">
 
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="maxprice"  name="maxprice"placeholder="Max Price"value="" >
+                            <input type="text" class="form-control" id="maxprice"  name="maxprice"placeholder="Max Price"value="" required="">
 
                         </div>
                     </div></br>
@@ -93,7 +93,7 @@
 
 
                     <div class="controls control-group pull-right">
-                        <button type="submit" id="confirm" name="confirm" class="btn btn-success" >search</button>
+                        <button type="submit" id="confirm" name="confirm" class="btn btn-success btn-group-lg" >search</button>
 
                     </div>
 

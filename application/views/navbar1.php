@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="welcome/index.php" title="HomePage" target="_self"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbspHome</a></li>
+            <li class="active"><a href="<?php echo base_url(); ?>welcome/index" title="HomePage" target="_self"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbspHome</a></li>
 
         </ul>
 
@@ -23,7 +23,7 @@
             <!-- add search form -->
             <form class="navbar-form navbar-right" role="search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search location,price" name="search_post" id="search_post">
+                    <input type="text" class="form-control" placeholder="Search location" name="search_post" id="search_post" required="">
                     <span class="input-group-btn">
                         <button type="submit" class="btn btn-default">
                             <span class="glyphicon glyphicon-search"></span>
@@ -156,7 +156,7 @@
                                 <div class="control-group">
                                     <label class="control-label" for="phone">Phone:</label>
                                     <div class="controls">
-                                        <input id="Phone" class="form-control" name="Phone" type="Text" placeholder="" class="input-large" required="">
+                                        <input  id="Phone" class="form-control" name="Phone" type="text" placeholder="" class="input-large" required="">
                                     </div>
                                 </div>
                                 <!-- Password input-->
